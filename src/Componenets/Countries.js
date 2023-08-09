@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCountries } from '../Redux/Slices/CountrySlice';
+import { Link } from 'react-router-dom';
+import { fetchCountries } from '../Redux/slices/CountriesSlice';
 
 function Countries() {
   const countryData = useSelector((store) => store.countries);
   const { loading, countries, error } = countryData;
-  console.log(countries[0]);
   const dispatch = useDispatch();
+  console.log(countries[0]);
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
@@ -32,15 +33,16 @@ function Countries() {
 
       >
         {countries.map((country) => (
-          <div key={country.area}>
+          <Link key={country.ccn3} to={`countries/${country.cca2}`}>
             <img src={country.flags.png} alt={country.flags.alt} />
+            <p>{country.cca2}</p>
             <p className="country-name">{country.name.common}</p>
             <p className="country-population">
               {(country.population / 1000000).toFixed(1)}
               {' '}
               M
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </>
