@@ -8,7 +8,6 @@ function Country() {
   const [singleCountry, setSingleCountry] = useState([]);
   const { countryName } = useParams();
   const dispatch = useDispatch();
-  console.log(singleCountry);
   useEffect(() => {
     dispatch(fetchCountry(countryName));
   }, [dispatch, countryName]);
