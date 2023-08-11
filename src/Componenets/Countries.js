@@ -7,6 +7,7 @@ function Countries() {
   const countryData = useSelector((store) => store.countries);
   const { loading, countries, error } = countryData;
   const dispatch = useDispatch();
+  console.log(countries);
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);

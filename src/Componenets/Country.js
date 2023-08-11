@@ -8,7 +8,7 @@ function Country() {
   const [singleCountry, setSingleCountry] = useState([]);
   const { countryName } = useParams();
   const dispatch = useDispatch();
-
+  console.log(singleCountry);
   useEffect(() => {
     dispatch(fetchCountry(countryName));
   }, [dispatch, countryName]);
@@ -36,17 +36,48 @@ function Country() {
       {singleCountry && (
         <div key={singleCountry.ccn3}>
           <img src={singleCountry.flags?.png} alt={singleCountry.name?.common} />
-          <h1>{singleCountry.name?.common}</h1>
-          <p>
-            Capital:
-            {' '}
-            {singleCountry.capital}
-          </p>
-          <p>
-            Region:
-            {' '}
-            {country.region}
-          </p>
+          <h1>{singleCountry.name?.official}</h1>
+          <ul>
+            <li>
+              Region:
+              {' '}
+              {singleCountry.region}
+
+            </li>
+            <li>
+              Subregion:
+              {' '}
+              {singleCountry.subregion}
+            </li>
+            <li>
+              Area:
+              {' '}
+              {singleCountry.area}
+              {' '}
+              sq km
+            </li>
+            <li>
+              Capital:
+              {' '}
+              {singleCountry.capital}
+            </li>
+            <li>
+              Time Zone:
+              {' '}
+              {singleCountry.timezones && singleCountry.timezones.length > 0 ? singleCountry.timezones[0] : 'No time zone available'}
+            </li>
+            <li>
+              Language:
+              {' '}
+              {singleCountry.languages && Object.values(singleCountry.languages).join(', ')}
+            </li>
+
+            <li>
+              Start of Week day:
+              {' '}
+              {singleCountry.startOfWeek}
+            </li>
+          </ul>
         </div>
       )}
     </div>

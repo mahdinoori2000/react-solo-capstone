@@ -11,7 +11,6 @@ export const fetchCountry = createAsyncThunk('country/fetchCountry', async (name
   try {
     const response = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
     const { data } = response;
-    console.log('data', data);
     return data;
   } catch (error) {
     throw Error(error);
