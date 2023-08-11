@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCountry } from '../Redux/slices/CountrySlice';
 
@@ -7,6 +7,7 @@ function Country() {
   const { loading, country, error } = useSelector((state) => state.country);
   const [singleCountry, setSingleCountry] = useState([]);
   const { countryName } = useParams();
+  const back = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCountry(countryName));
@@ -31,6 +32,7 @@ function Country() {
   }
   return (
     <div>
+      <button type="button" onClick={() => back(-1)}>Back</button>
       <h1>singleCountry Details</h1>
       {singleCountry && (
         <div key={singleCountry.ccn3}>
