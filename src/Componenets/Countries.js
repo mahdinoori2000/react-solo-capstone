@@ -7,7 +7,6 @@ function Countries() {
   const countryData = useSelector((store) => store.countries);
   const { loading, countries, error } = countryData;
   const dispatch = useDispatch();
-  console.log(countries[0]);
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
@@ -30,18 +29,19 @@ function Countries() {
       <div
         className="countries"
         style={{ cursor: 'pointer', display: 'grid', gridTemplateColumns: '1fr 1fr' }}
-
       >
         {countries.map((country) => (
-          <Link key={country.ccn3} to={`countries/${country.cca2}`}>
-            <img src={country.flags.png} alt={country.flags.alt} />
-            <p>{country.cca2}</p>
-            <p className="country-name">{country.name.common}</p>
-            <p className="country-population">
-              {(country.population / 1000000).toFixed(1)}
-              {' '}
-              M
-            </p>
+          <Link key={country.name.common} to={`name/${country.name.common}`}>
+            <div>
+              <img src={country.flags.png} alt={country.flags.alt} />
+              <p>{country.cca2}</p>
+              <p className="country-name">{country.name.common}</p>
+              <p className="country-population">
+                {(country.population / 1000000).toFixed(1)}
+                {' '}
+                M
+              </p>
+            </div>
           </Link>
         ))}
       </div>

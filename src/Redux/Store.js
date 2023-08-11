@@ -1,4 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
 import countriesReducer from './slices/CountriesSlice';
 import countryReducer from './slices/CountrySlice';
 
@@ -7,6 +8,7 @@ const store = configureStore({
     countries: countriesReducer,
     country: countryReducer,
   },
-});
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+}, applyMiddleware(thunk));
 
 export default store;

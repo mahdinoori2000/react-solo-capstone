@@ -9,7 +9,7 @@ const initialState = {
 
 export const fetchCountry = createAsyncThunk('country/fetchCountry', async (name) => {
   try {
-    const response = await axios.get(`https://restcountries.com/v3.1/alpha/${name}`);
+    const response = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
     const { data } = response;
     console.log('data', data);
     return data;
@@ -17,7 +17,7 @@ export const fetchCountry = createAsyncThunk('country/fetchCountry', async (name
     throw Error(error);
   }
 });
-
+fetchCountry('cameroon');
 const countrySlice = createSlice({
   name: 'country',
   initialState,
