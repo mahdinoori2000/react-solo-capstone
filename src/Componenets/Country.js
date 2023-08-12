@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Country.css';
 import { FaMicrophone } from 'react-icons/fa';
 import { AiFillSetting } from 'react-icons/ai';
-import { fetchCountry } from '../Redux/slices/CountrySlice.js';
+import { fetchCountry } from '../Redux/slices/CountrySlice';
 
 function Country() {
   const { loading, country, error } = useSelector((state) => state.country);
