@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import './Country.css';
+import { FaMicrophone } from 'react-icons/fa';
+import { AiFillSetting } from 'react-icons/ai';
 import { fetchCountry } from '../Redux/slices/CountrySlice';
 
 function Country() {
@@ -31,55 +34,68 @@ function Country() {
     );
   }
   return (
-    <div>
-      <button type="button" onClick={() => back(-1)}>Back</button>
-      <h1>singleCountry Details</h1>
+    <div className="details__container">
       {singleCountry && (
-        <div key={singleCountry.ccn3}>
-          <img src={singleCountry.flags?.png} alt={singleCountry.name?.common} />
-          <h1>{singleCountry.name?.official}</h1>
-          <ul>
-            <li>
-              Region:
-              {' '}
-              {singleCountry.region}
+        <>
+          <div className="details-single-country">
+            <button aria-label="Button with Icon" type="button" onClick={() => back(-1)} className="back-btn">&lt;&nbsp;Back</button>
+            <h1 className="details__title">{singleCountry.name?.common}</h1>
+            <div>
+              <FaMicrophone style={{ fill: '#fff', fontSize: '18px', marginRight: '10px' }} />
+              <AiFillSetting style={{ fill: '#fff', fontSize: '18px' }} />
+            </div>
+          </div>
+          <div key={singleCountry.ccn3} className="single__container">
+            <img src={singleCountry.flags?.png} alt={singleCountry.name?.common} />
+            <ul className="country-list">
+              <li>
+                <span>official Name:</span>
+                {' '}
+                <span>{singleCountry.name?.official}</span>
+              </li>
+              <li>
+                <span>Region:</span>
+                {' '}
+                <span>{singleCountry.region}</span>
+              </li>
+              <li>
+                <span>Subregion:</span>
+                {' '}
+                <span>{singleCountry.subregion}</span>
+              </li>
+              <li>
+                <span>Area:</span>
+                {' '}
+                <span>
+                  {singleCountry.area}
+                  {' '}
+                  sq km
+                </span>
+              </li>
+              <li>
+                <span>Capital: </span>
+                {' '}
+                <span>{singleCountry.capital}</span>
+              </li>
+              <li>
+                <span>Time Zone:</span>
+                {' '}
+                <span>{singleCountry.timezones && singleCountry.timezones.length > 0 ? singleCountry.timezones[0] : 'No time zone available'}</span>
+              </li>
+              <li>
+                <span>Language:</span>
+                {' '}
+                <span>{singleCountry.languages && Object.values(singleCountry.languages).join(', ')}</span>
+              </li>
+              <li>
+                <span>Start of Week day:</span>
+                {' '}
+                <span>{singleCountry.startOfWeek}</span>
+              </li>
+            </ul>
+          </div>
 
-            </li>
-            <li>
-              Subregion:
-              {' '}
-              {singleCountry.subregion}
-            </li>
-            <li>
-              Area:
-              {' '}
-              {singleCountry.area}
-              {' '}
-              sq km
-            </li>
-            <li>
-              Capital:
-              {' '}
-              {singleCountry.capital}
-            </li>
-            <li>
-              Time Zone:
-              {' '}
-              {singleCountry.timezones && singleCountry.timezones.length > 0 ? singleCountry.timezones[0] : 'No time zone available'}
-            </li>
-            <li>
-              Language:
-              {' '}
-              {singleCountry.languages && Object.values(singleCountry.languages).join(', ')}
-            </li>
-
-            <li>
-              Start of Week day:
-              {' '}
-              {singleCountry.startOfWeek}
-            </li>
-          </ul>
-        </div>
+        </>
       )}
     </div>
   );

@@ -5,6 +5,7 @@
     padding: 0 25px;
     background-color: #ec4c8b;
     color: #fff;
+    height: 40px;
 }
 .header-icons {
     display: flex;
