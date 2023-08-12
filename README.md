@@ -62,6 +62,7 @@ Explore the world with **Rest Countries**, a mobile web app that offers an engag
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Introduction of project](https://drive.google.com/file/d/1ulLRgxj4Dlrm6di8WuDptDuqzoJaX4Wz/view?usp=sharing)
+- [Live demo](https://development--classy-griffin-142f85.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
