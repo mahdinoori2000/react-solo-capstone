@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchCountries } from '../Redux/slices/CountriesSlice';
+import Header from './HeaderSection';
 
 function Countries() {
   const countryData = useSelector((store) => store.countries);
@@ -26,7 +27,7 @@ function Countries() {
 
   return (
     <>
-      <h1>This is gonna be header</h1>
+      <Header />
       <input type="text" className="search-bar" onChange={(e) => setSearch(e.target.value)} />
       <div
         className="countries"
