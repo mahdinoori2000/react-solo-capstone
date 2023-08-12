@@ -37,7 +37,6 @@ function Countries() {
           <Link key={country.name.common} to={`name/${country.name.common}`}>
             <div>
               <img src={country.flags.png} alt={country.flags.alt} />
-              <p>{country.cca2}</p>
               <p className="country-name">{country.name.common}</p>
               <p className="country-population">
                 {(country.population / 1000000).toFixed(1)}
