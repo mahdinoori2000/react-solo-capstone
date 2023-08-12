@@ -1,6 +1,7 @@
 import { FaMicrophone } from 'react-icons/fa';
 import { AiFillSetting } from 'react-icons/ai';
 import './HeaderSection.css';
+import EarthImage from './map.png';
 
 function Header() {
   return (
@@ -13,8 +14,13 @@ function Header() {
         </div>
 
       </div>
-      <div className="headline" />
-      <h1>Rest Countries</h1>
+      <div className="headline">
+        <img className="earth-logo" src={EarthImage} alt="Earth" />
+        <div className="headline-description">
+          <h1>Rest Countries</h1>
+          <p>You can find information about all countries in the world</p>
+        </div>
+      </div>
     </>
   );
 }

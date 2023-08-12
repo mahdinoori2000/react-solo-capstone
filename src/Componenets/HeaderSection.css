@@ -10,3 +10,17 @@
     display: flex;
     gap: 20px;
 }
+ /* HEADLINE SECTION  */
+.headline {
+    background-color: #fc5193;
+    color: #fff;
+    display: flex;
+    gap: 20px;
+    padding: 10px
+}
+.earth-logo {
+    width: 35%;
+}
+.headline-description h1 {
+    font-size: 24px;
+}
