@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { fetchCountries } from '../Redux/slices/CountriesSlice';
+import { fetchCountries } from '../Redux/slices/CountriesSlice.js';
 import Header from './HeaderSection';
 import './Countries.css';
 

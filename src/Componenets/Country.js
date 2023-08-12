@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Country.css';
 import { FaMicrophone } from 'react-icons/fa';
 import { AiFillSetting } from 'react-icons/ai';
-import { fetchCountry } from '../Redux/slices/CountrySlice';
+import { fetchCountry } from '../Redux/slices/CountrySlice.js';
 
 function Country() {
   const { loading, country, error } = useSelector((state) => state.country);

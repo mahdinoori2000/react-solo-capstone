@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import countriesReducer from './slices/CountriesSlice';
-import countryReducer from './slices/CountrySlice';
+import countriesReducer from './slices/CountriesSlice.js';
+import countryReducer from './slices/CountrySlice.js';
 
 const store = configureStore({
   reducer: {
