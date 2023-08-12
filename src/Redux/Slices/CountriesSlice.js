@@ -3,35 +3,36 @@ import axios from 'axios';
 
 const initialState = {
   loading: false,
-  country: [],
+  countries: [],
   error: '',
 };
+const apiUrl = 'https://restcountries.com/v3.1/all';
 
-export const fetchCountry = createAsyncThunk('country/fetchCountry', async (name) => {
+export const fetchCountries = createAsyncThunk('countries/fetchCountries', async () => {
   try {
-    const response = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
+    const response = await axios.get(apiUrl);
     const { data } = response;
     return data;
   } catch (error) {
     throw Error(error);
   }
 });
-fetchCountry('cameroon');
-const countrySlice = createSlice({
-  name: 'country',
+
+const countriesSlice = createSlice({
+  name: 'missions',
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCountry.pending, (state) => ({
+      .addCase(fetchCountries.pending, (state) => ({
         ...state,
         loading: true,
       }))
-      .addCase(fetchCountry.fulfilled, (state, action) => ({
+      .addCase(fetchCountries.fulfilled, (state, action) => ({
         ...state,
         loading: false,
-        country: action.payload,
+        countries: action.payload,
       }))
-      .addCase(fetchCountry.rejected, (state, action) => ({
+      .addCase(fetchCountries.rejected, (state, action) => ({
         ...state,
         loading: false,
         error: action.error.message,
@@ -39,4 +40,4 @@ const countrySlice = createSlice({
   },
 });
 
-export default countrySlice.reducer;
+export default countriesSlice.reducer;
