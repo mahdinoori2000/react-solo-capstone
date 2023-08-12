@@ -9,7 +9,6 @@ import './Countries.css';
 function Countries() {
   const countryData = useSelector((store) => store.countries);
   const { loading, countries, error } = countryData;
-  console.log(countries);
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
   useEffect(() => {

@@ -1,27 +1,31 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;
-    background-color: #ec4c8b;
-    color: #fff;
-    height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  background-color: #ec4c8b;
+  color: #fff;
+  height: 40px;
 }
+
 .header-icons {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
- /* HEADLINE SECTION  */
+
+/* HEADLINE SECTION  */
 .headline {
-    background-color: #fc5193;
-    color: #fff;
-    display: flex;
-    gap: 20px;
-    padding: 10px
+  background-color: #fc5193;
+  color: #fff;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
 }
+
 .earth-logo {
-    width: 35%;
+  width: 35%;
 }
+
 .headline-description h1 {
-    font-size: 24px;
+  font-size: 24px;
 }

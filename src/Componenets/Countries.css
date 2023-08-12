@@ -1,71 +1,71 @@
 .search {
-    display: flex;
-    align-items: center;
-    background-color: #fc5193;
-    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
+  display: flex;
+  align-items: center;
+  background-color: #fc5193;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
 }
 
-.search-icon  {
-    font-size: 25px;
-    margin: 0 10px;
-    fill: #fff;
+.search-icon {
+  font-size: 25px;
+  margin: 0 10px;
+  fill: #fff;
 }
 
 .search-bar {
-    height: 40px;
-    background: none;
-    border: none;
-    width: 100%;
-    outline: none;
-    color: #fff;
+  height: 40px;
+  background: none;
+  border: none;
+  width: 100%;
+  outline: none;
+  color: #fff;
 }
 
 .search-bar::placeholder {
-    color: #fff;
-    opacity: 0.5;
+  color: #fff;
+  opacity: 0.5;
 }
- /* COUNTRIES DESIGN  */
+
 /* Countries.css */
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #ec4c8b;
+  padding: 5px;
+  padding-top: 10%;
+}
+
 .countries .country:nth-child(even) {
-    background-color: red;
-  }
-  
- .country {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: #ec4c8b;
-    padding: 5px;
-    padding-top: 10%;
- }
+  background-color: red;
+}
 
 .country-flag {
-    width: 130px;
-    height: 75px;
+  width: 130px;
+  height: 75px;
 }
 
 .Link {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
 .flex-end {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-    justify-self: flex-end;
-    margin: 40px 5px 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin: 40px 5px 10px 0;
 }
 
 .country-name,
 .country-population {
-    align-self: flex-end;
-    margin-top: -20px;
+  align-self: flex-end;
+  margin-top: -20px;
 }
 
 .country-population {
-    margin: 0;
+  margin: 0;
 }
